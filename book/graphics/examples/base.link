@@ -1,0 +1,41 @@
+
+load @drumwork/crow/code/graphics/bond/switch
+  take bond switch
+
+load @drumwork/crow/code/graphics/bond/transition
+  take bond boolean-transition
+
+view switch
+  slab block, fuse switch-container
+    slab block, fuse switch-background
+    slab block, fuse switch-button
+
+tree switch-background
+  hook bind
+    bind tag, term span
+    bind fill-color
+      stem test
+        test is-true
+          loan self/bond/is-on
+        hook true
+          term green
+        hook false
+          term grey
+
+tree switch-button
+  hook bind
+    bind tag, term span
+    bind fill-color, term black
+    bind left
+      call multiply
+        loan self/intrinsic-width
+        loan self/bond/ratio
+
+tree switch-container
+  hook bind
+    slot slab
+    walk list, loam bond/container/bindings
+      hook step
+        take binding, name item
+        beam slot
+          loan binding

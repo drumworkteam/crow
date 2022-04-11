@@ -1,0 +1,20 @@
+
+bond switch
+  take is-on, base false
+  take is-tabbable, base true
+  take is-focusable, base true
+  take handle-change?
+    like task
+      take value, like boolean
+
+  task toggle
+    save self/is-on, call flip, loan self/is-on
+    call handle-change?
+      loan is-on
+
+  tree container
+    hook bind
+      hook click
+        call self/toggle
+      hook press-enter
+        call self/toggle
