@@ -1,0 +1,22 @@
+
+view menu
+  bond menu
+  zone block, fuse menu-container
+    fuse menu-item
+      text <Edit>
+      hook activate
+        # do edit
+
+tree menu-item
+  take label
+  take activate
+
+  hook bind
+    bind tag, term li
+    fuse self
+
+tree menu-container
+  hook bind
+    bind tag, term ul
+    bind aria-role, term menu
+    fuse self/bond/container

@@ -1,0 +1,33 @@
+
+view button
+  take click
+
+  host edge-fill
+
+  host hover-start
+    fuse animation
+      code #h000000
+      code #hffffff
+      term edge-fill
+  host hover-end
+    fuse animation
+      code #hffffff
+      code #h000000
+      term edge-fill
+
+  mass coat, fuse button-container
+    bind edge-fill, loan self/edge-fill
+    hook click, base self/click
+    hook hover-start
+      call self/hover-start/play
+    hook hover-end
+      call self/hover-end/play
+
+tree button-container
+  bind tag, term button
+  bind padding-top, size 14, code px
+  bind padding-bottom, size 14, code px
+  bind padding-left, size 8, code px
+  bind padding-right, size 8, code px
+  bind corner-radius, size 4, code px
+  bind font-size, size 16

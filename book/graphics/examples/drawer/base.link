@@ -1,0 +1,85 @@
+
+view drawer
+  zone blocker
+  take body, like mass
+
+  beam viewport
+    fuse self/viewport
+
+  host opacity, mark 0
+  host x, mark 0
+  host show-window
+    tune list
+      tune mark
+        note <Fade opacity>
+        bind start-value, mark 0
+        bind end-value, mark 1
+        bind time, mark 1000
+        hook update
+          take value
+          save self/opacity, loan value
+      tune mark
+        note <Move into place>
+        bind start-value, call negate, loan view-width
+        bind end-value, loan view-width
+        bind time, mark 900
+        hook update
+          take value
+          save self/x, loan value
+
+  host hide-window
+    tune list
+      tune mark
+        note <Fade opacity>
+        bind start-value, mark 1
+        bind end-value, mark 0
+        bind time, mark 300
+        hook update
+          take value
+          save self/opacity, loan value
+      tune mark
+        note <Move into place>
+        bind start-value, loan view-width
+        bind end-value, call negate, loan view-width
+        bind time, mark 300
+        hook update
+          take value
+          save self/x, loan value
+
+  task show
+    call self/show/play
+      wait true
+
+  task hide
+    call self/hide/play
+      wait true
+
+  mass coat, fuse drawer-container
+    mass coat, fuse drawer-overlay
+      bind opacity, loan self/opacity
+    mass coat, fuse drawer-window
+      bind transform-x, loan self/x
+      bind opacity, loan self/opacity
+      mass coat, fuse drawer-header
+        mass coat, fuse drawer-title
+        mass coat, fuse drawer-close-button
+      mass coat, fuse drawer-body
+        loan body
+
+tree drawer-window
+  hook bind
+    bind fill, term white
+
+tree drawer-close-button
+  hook bind
+    fuse self/close-button
+
+tree drawer-container
+
+tree drawer-overlay
+
+tree drawer-header
+
+tree drawer-title
+
+tree drawer-body
