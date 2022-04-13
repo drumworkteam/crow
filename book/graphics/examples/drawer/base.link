@@ -3,56 +3,17 @@ view drawer
   zone blocker
   take body, like mass
 
-  beam viewport
-    fuse self/viewport
-
   host opacity, mark 0
   host x, mark 0
-  host show-window
-    tune list
-      tune mark
-        note <Fade opacity>
-        bind start-value, mark 0
-        bind end-value, mark 1
-        bind time, mark 1000
-        hook update
-          take value
-          save self/opacity, loan value
-      tune mark
-        note <Move into place>
-        bind start-value, call negate, loan view-width
-        bind end-value, loan view-width
-        bind time, mark 900
-        hook update
-          take value
-          save self/x, loan value
-
-  host hide-window
-    tune list
-      tune mark
-        note <Fade opacity>
-        bind start-value, mark 1
-        bind end-value, mark 0
-        bind time, mark 300
-        hook update
-          take value
-          save self/opacity, loan value
-      tune mark
-        note <Move into place>
-        bind start-value, loan view-width
-        bind end-value, call negate, loan view-width
-        bind time, mark 300
-        hook update
-          take value
-          save self/x, loan value
 
   task show
-    call self/show/play
-      wait true
+    tune self/opacity, mark 1
+      bind system, term ease # or spring
+      bind delay, mark 100
+    tune self/x, mark 0
 
   task hide
-    call self/hide/play
-      wait true
+    tune self/opacity, mark 0
 
   mass coat, fuse drawer-container
     mass coat, fuse drawer-overlay

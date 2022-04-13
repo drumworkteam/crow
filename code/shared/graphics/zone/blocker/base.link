@@ -11,11 +11,11 @@ mask blocker
   task hide
 
   task handle-close
+    hide true
     stem test
       test is-true, loan is-closing
       hook true, back void
     save is-closing, term true
-    hide true
     call self/hide?, wait true
     call self/close?
     call self/unmount
