@@ -1,0 +1,7 @@
+
+form string
+  task escape-html
+  task escape-regexp
+  task unescape-html
+  task unescape-regexp
+  task sanitize-html
