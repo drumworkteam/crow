@@ -6,9 +6,9 @@ load @drumwork/crow/code/graphics/bond/transition
   take bond boolean-transition
 
 view switch
-  slab block, fuse switch-container
-    slab block, fuse switch-background
-    slab block, fuse switch-button
+  zone block, fuse switch-container
+    zone block, fuse switch-background
+    zone block, fuse switch-button
 
 tree switch-background
   hook bind
@@ -33,8 +33,9 @@ tree switch-button
 
 tree switch-container
   hook bind
+    bind border-radius, size 4
     slot slab
-    walk list, loam bond/container/bindings
+    walk list, loan bond/container/bindings
       hook step
         take binding, name item
         beam slot
