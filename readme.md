@@ -34,7 +34,7 @@ The `crow` framework is the implementation for the `tree` specification. It aims
 
 ### License
 
-Copyright 2022 <a href='https://drum.work'>TreeSurf</a>
+Copyright 2022-2023 <a href='https://drum.work'>TreeSurf</a>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
