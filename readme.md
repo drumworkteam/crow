@@ -12,7 +12,7 @@
 
 <h3 align='center'>crow.link</h3>
 <p align='center'>
-  Link Text Framework Implementation
+  Base Link Framework Implementation
 </p>
 
 <br/>
