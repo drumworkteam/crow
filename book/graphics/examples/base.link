@@ -1,8 +1,8 @@
 
-load @treesurf/crow/code/graphics/bond/switch
+load @tunebond/crow/code/graphics/bond/switch
   take bond switch
 
-load @treesurf/crow/code/graphics/bond/transition
+load @tunebond/crow/code/graphics/bond/transition
   take bond boolean-transition
 
 view switch
