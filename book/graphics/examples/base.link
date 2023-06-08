@@ -5,10 +5,10 @@ load @tunebond/crow/code/graphics/bond/switch
 load @tunebond/crow/code/graphics/bond/transition
   take bond boolean-transition
 
-view switch
-  zone block, fuse switch-container
-    zone block, fuse switch-background
-    zone block, fuse switch-button
+zone switch
+  mesh block, fuse switch-container
+    mesh block, fuse switch-background
+    mesh block, fuse switch-button
 
 tree switch-background
   hook bind
