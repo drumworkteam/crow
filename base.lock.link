@@ -1,0 +1,16 @@
+mark <0.0.1>
+
+load @tunebond/moon
+  mark <*>
+  lock <0.0.1>
+load @tunebond/bolt
+  mark <*>
+  lock <0.0.1>
+load @tunebond/wolf
+  mark <*>
+  lock <0.0.1>
+
+link <@tunebond/wolf:0.0.1>
+  hash <sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==>
+  load @tunebond/bolt
+    mark <0.0.1>
