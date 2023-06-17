@@ -30,6 +30,7 @@ hook make
       save name
 
   call copy-template
+    wait true
     text <{make-base}/read.md>
     text <{flow-base}/readme.md>
     bind variables
@@ -37,9 +38,11 @@ hook make
       bind title, call titleize, loan name
 
   call copy-file
+    wait true
     text <{make-base}/host/favicon.svg>
     text <{flow-base}/host>
 
   call copy-file
+    wait true
     text <{make-base}/code/dock/base/base.link>
     text <{flow-base}/code/dock/base>
