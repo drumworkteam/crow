@@ -1,3 +1,0 @@
-
-bear ./shared
-bear ./{base/host/code}
