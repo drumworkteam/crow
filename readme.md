@@ -12,7 +12,7 @@
 
 <h3 align='center'>crow.link</h3>
 <p align='center'>
-  Base Link Framework
+  The Base Link UI Kit
 </p>
 
 <br/>
@@ -29,87 +29,76 @@ The `crow` framework aims to be an opinionated model of everything you need to b
 
 ## Usage
 
-From nothing:
-
 ```
-base make @tunebond/crow
+base save deck @tunebond/crow
 ```
-
-That runs the executable in `@tunebond/crow#make` and gives you a starter project. Otherwise here are the more manual steps:
-
-```
-base link deck @tunebond/crow
-```
-
-Add to the `dock/role/base.link` file.
-
-```
-load @tunebond/crow
-  find mind code
-
-role code
-  link ./**/test.link
-  link ./**/base.link
-```
-
-Then in a code formatted file:
 
 ```
 load @tunebond/crow
   find dock button
-  find task draw
-  find form base
-
-host button-style
-  host fill, text <red>
-  host hover
-    host fill, text <blue>
-
-call draw
-  zone button, text <hello world>
-    vibe button-style
-    hook click
-      show <clicked!>
-
-form user
-  link email, like text
-
-form post
-  link title, like text
-
-# schema
-host base
-  make base
-    form user
-    form post
+  find dock icon
+  find dock divider
+  find dock grid
+  find dock layout
+  find dock space
+  find dock anchor
+  find dock breadcrumb
+  find dock dropdown
+  find dock menu
+  find dock pagination
+  find dock steps
+  find dock auto-complete
+  find dock cascader
+  find dock checkbox
+  find dock color-picker
+  find dock date-picker
+  find dock time-picker
+  find dock form
+  find dock input
+  find dock radio
+  find dock rate
+  find dock select
+  find dock slider
+  find dock switch
+  find dock transfer
+  find dock tree-select
+  find dock upload
+  find dock avatar
+  find dock badge
+  find dock calendar
+  find dock card
+  find dock carousel
+  find dock collapse
+  find dock descriptions
+  find dock empty
+  find dock image
+  find dock list
+  find dock popover
+  find dock qr-code
+  find dock segmented
+  find dock statistic
+  find dock table
+  find dock tabs
+  find dock tag
+  find dock timeline
+  find dock tooltip
+  find dock tour
+  find dock tree
+  find dock alert
+  find dock drawer
+  find dock message
+  find dock modal
+  find dock notification
+  find dock popconfirm
+  find dock progress
+  find dock result
+  find dock skeleton
+  find dock spin
+  find dock affix
+  find dock app
+  find dock config-provider
+  find dock float-button
 ```
-
-All the components can be access directly from that import, but in case you need something internal, dig into `@tunebond/crow/code/**/*.link`.
-
-Then build the package into the `./cast` folder.
-
-```
-base cast deck
-```
-
-## Development
-
-```
-pnpm add @tunebond/base -g
-git clone git@github.com:tunebond/crow.link.git
-cd crow.link
-base load deck
-```
-
-Then run the tests in `crow.link`.
-
-```
-base test deck
-```
-
-It should print out the test results in the terminal using Node.js for now.
-
-Fiddle around with the test files to get a sense for what's being tested and what's missing. It has a long ways to go!
 
 ## License
 
