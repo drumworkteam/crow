@@ -1,0 +1,17 @@
+
+deck @tunebond/crow
+  bear ./code
+  test ./test
+  read ./book
+  mint <0.0.1>
+  link @tunebond/bolt, mark <*>
+  link @tunebond/moon, mark <*>
+  link @tunebond/wolf, mark <*>
+  link @tunebond/tree, mark <*>
+  link @tunebond/nest, mark <*>
+  save code
+    take browser
+    take node
+    take macos
+    take linux
+    take ios

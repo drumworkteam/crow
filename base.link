@@ -1,8 +1,0 @@
-
-deck @tunebond/crow
-  bear ./code
-  test ./test
-  mint <0.0.1>
-  deck @tunebond/moon, mark <*>
-  deck @tunebond/bolt, mark <*>
-  deck @tunebond/wolf, mark <*>
