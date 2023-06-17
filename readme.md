@@ -92,6 +92,25 @@ Then build the package into the `./cast` folder.
 base cast deck
 ```
 
+## Development
+
+```
+pnpm add @tunebond/base -g
+git clone git@github.com:tunebond/crow.link.git
+cd crow.link
+base load deck
+```
+
+Then run the tests in `crow.link`.
+
+```
+base test deck
+```
+
+It should print out the test results in the terminal using Node.js for now.
+
+Fiddle around with the test files to get a sense for what's being tested and what's missing. It has a long ways to go!
+
 ## License
 
 Copyright 2022-2023 <a href='https://tune.bond'>TuneBond</a>
