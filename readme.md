@@ -27,6 +27,71 @@ The `crow` framework aims to be an opinionated model of everything you need to b
   <img src='https://github.com/tunebond/crow.link/blob/make/view/base.logo.svg?raw=true' height='256'>
 </p>
 
+## Usage
+
+From nothing:
+
+```
+base make @tunebond/crow
+```
+
+That runs the executable in `@tunebond/crow#make` and gives you a starter project. Otherwise here are the more manual steps:
+
+```
+base link deck @tunebond/crow
+```
+
+Add to the `dock/role/base.link` file.
+
+```
+load @tunebond/crow
+  find mind code
+
+role code
+  link ./**/test.link
+  link ./**/base.link
+```
+
+Then in a code formatted file:
+
+```
+load @tunebond/crow
+  find dock button
+  find task draw
+  find form base
+
+host button-style
+  host fill, text <red>
+  host hover
+    host fill, text <blue>
+
+call draw
+  zone button, text <hello world>
+    vibe button-style
+    hook click
+      show <clicked!>
+
+form user
+  link email, like text
+
+form post
+  link title, like text
+
+# schema
+host base
+  make base
+    form user
+    form post
+```
+
+All the components can be access directly from that import, but in case you need something internal, dig into `@tunebond/crow/code/**/*.link`.
+
+Then build the package into the `./cast` folder.
+
+```
+base cast deck
+```
+
 ## License
 
 Copyright 2022-2023 <a href='https://tune.bond'>TuneBond</a>

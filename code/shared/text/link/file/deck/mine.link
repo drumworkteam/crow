@@ -1,7 +1,7 @@
 
-load ../..
-  load /deck
-    take mine deck
+load @tunebond/crow/code/text/link/deck
+  find mine deck
+    save mine deck-tree
 
-mine deck-file
-  mine form, form deck
+mine deck
+  mine form, form deck-tree
